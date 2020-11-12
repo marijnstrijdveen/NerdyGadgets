@@ -28,6 +28,25 @@ include "header.php"
                     </div>
                 </form>
             </div>
+            <div class="col-md-6">
+                <div class="card bg-dark position-sticky" style="top: 100px">
+                    <div class="card-body">
+                        <h5 class="card-title">Voordelen van een account aanmaken:</h5>
+                        <div class="card-text">
+                            Word lid van Nerdygadgets en maak gebruik van:
+
+                            <ul>
+                                <li>Sneller afrekenen</li>
+                                <li>Aanbiedingen</li>
+                            </ul>
+
+                            <a href="registreren.php" class="btn btn-primary">
+                                Account aanmaken
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
