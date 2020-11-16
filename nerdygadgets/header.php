@@ -73,6 +73,9 @@ include "connect.php";
                 <li>
                     <a href="categories.php" class="HrefDecoration">Alle categorieën</a>
                 </li>
+                <li>
+                    <a href="verzending-en-bezorging.php" class="HrefDecoration">Bezorging</a>
+                </li>
             </ul>
         </div>
         <ul id="ul-class-navigation">
