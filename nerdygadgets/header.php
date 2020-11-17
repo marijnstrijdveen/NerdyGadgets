@@ -73,7 +73,6 @@ include "connect.php";
 
                 <li>
                     <a href="categories.php" class="HrefDecoration">Alle categorieën</a>
-                    <a href="contact.php" class="HrefDecoration">Contactpagina</a>
                 </li>
 
             </ul>
