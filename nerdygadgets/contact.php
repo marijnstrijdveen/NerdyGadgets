@@ -14,7 +14,7 @@ include "header.php";
 Wij zijn Nerdygadgets. We zijn trots op onze producten en geloven in kwaliteit. In ieder huis vindt een product van Nerdygadgets zijn thuis.<br>
 Ondanks onze grootte zien klanten ons als kleinschalig en betrokken. Persoonlijk klantcontact staat bij ons hoog in het vaandel. <br> <br>
 <b>Email:</b> contact@nerdygadgets.nl <br>
-<b>Telefoon nummer:</b>030 - 123 45 67 <br>
+<b>Telefoon nummer:</b> 030 - 123 45 67 <br>
 <b>Adres:</b> Stationsplein, 1012 AB Amsterdam <br> <br>
 <b>Openingstijden:</b> <br>
 Maandag 08:00 - 21:00 <br>
