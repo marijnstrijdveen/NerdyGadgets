@@ -70,16 +70,17 @@ include "connect.php";
                     <?php
                 }
                 ?>
+
                 <li>
                     <a href="categories.php" class="HrefDecoration">Alle categorieën</a>
                 </li>
+
             </ul>
         </div>
         <ul id="ul-class-navigation">
             <li>
                 <a href="inloggen.php" class="HrefDecoration">Inloggen</a>
             </li>
-
             <li>
                 <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Zoeken</a>
             </li>
