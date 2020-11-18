@@ -1,6 +1,15 @@
 <?php
 include __DIR__ . "/header.php";
+
+
+
+require('connect.php');
+
+if (empty($_SESSION['email'])) {
+    header("location:login.php");
+}
 ?>
+
 <div class="IndexStyle">
     <div class="col-11">
         <div class="TextPrice">

@@ -4,5 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="kbs1-wide-world-importers-master (4)" />
+    <orderEntry type="module" module-name="login" />
   </component>
 </module>
