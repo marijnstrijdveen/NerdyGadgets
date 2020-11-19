@@ -110,7 +110,7 @@ if ($R) {
             ?>
 
 
-            <h1 class="StockItemID">Artikelnummer: <?php print $Result["StockItemID"]; ?></h1>
+            <h1 class="StockItemID">Productnumber <?php print $Result["StockItemID"]; ?></h1>
             <h2 class="StockItemNameViewSize StockItemName">
                 <?php print $Result['StockItemName']; ?>
             </h2>
