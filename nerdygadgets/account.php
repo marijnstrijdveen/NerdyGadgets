@@ -34,7 +34,7 @@ if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
     </div>
     <div class="row" >
         <div class="col">
-            <h3>Accountinformatie</h3>
+            <h3>Accountinformatie:</h3>
             <ul class="list-group">
                 <li class="list-group-item bg-dark">
                     <small class="text-muted">Naam:</small>
