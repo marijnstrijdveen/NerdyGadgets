@@ -3,7 +3,7 @@
 session_start();
 require('connect.php');
 
-
+$invalid = false;
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $email = mysqli_real_escape_string($Connection, $_POST['email']);
@@ -11,13 +11,14 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $sql = mysqli_query($Connection, "SELECT * FROM `accounts` WHERE `email`='$email'  AND `password`='$password'  ");
     if (mysqli_num_rows($sql) == 1) {
         $_SESSION['email'] = $email;
-        header("location:index.php");
+            header("location:account.php");
     } else {
-        echo "Email en/of wachtwoord is incorrect.";
+        $invalid = true;
     }
 }
 include "header.php";
 ?>
+
 
 <section class="signin-container">
         <div class="container py-5">
@@ -26,6 +27,11 @@ include "header.php";
                 <div class="col-md-6">
                     <form method="post">
                         <div class="form-group">
+                        <?php if ($invalid) : ?>
+                            <div class="alert alert-danger">
+                                Er is geen account gevonden met deze combinatie.
+                            </div>
+                        <?php endif; ?>
                             <label for="email">Email</label>
                             <input class="form-control" type="email" name="email" id="email" required>
                         </div>

@@ -25,7 +25,7 @@ if (isset($_POST['register']))   {
     }
     }
 
-//include "header.php";
+include "header.php";
 ?>
 <section class="signin-container">
     <div class="container py-5">
@@ -76,10 +76,6 @@ if (isset($_POST['register']))   {
                                 <li>Sneller afrekenen</li>
                                 <li>Aanbiedingen</li>
                             </ul>
-
-                            <a href="registreren.php" class="btn btn-primary">
-                                Account aanmaken
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -87,3 +83,6 @@ if (isset($_POST['register']))   {
         </div>
     </div>
 </section>
+<?php
+include "footer.php";
+?>
