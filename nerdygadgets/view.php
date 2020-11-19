@@ -126,11 +126,11 @@ if ($R) {
         </div>
 
         <div id="StockItemDescription">
-            <h3>Article description</h3>
+            <h3>Product description</h3>
             <p><?php print $Result['SearchDetails']; ?></p>
         </div>
         <div id="StockItemSpecifications">
-            <h3>Article information</h3>
+            <h3>Product information</h3>
             <?php
             $CustomFields = json_decode($Result['CustomFields'], true);
             if (is_array($CustomFields)) { ?>
