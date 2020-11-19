@@ -7,7 +7,7 @@ $Query = "
            SELECT SI.StockItemID, 
             (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice, 
             StockItemName,
-            CONCAT('Voorraad: ',QuantityOnHand)AS QuantityOnHand,
+            CONCAT('Stock ',QuantityOnHand)AS QuantityOnHand,
             SearchDetails, 
             (CASE WHEN (RecommendedRetailPrice*(1+(TaxRate/100))) > 50 THEN 0 ELSE 6.95 END) AS SendCosts, MarketingComments, CustomFields, SI.Video,
             (SELECT ImagePath FROM stockgroups JOIN stockitemstockgroups USING(StockGroupID) WHERE StockItemID = SI.StockItemID LIMIT 1) as BackupImagePath   
@@ -119,24 +119,24 @@ if ($R) {
                 <div class="CenterPriceLeft">
                     <div class="CenterPriceLeftChild">
                         <p class="StockItemPriceText"><b><?php print sprintf("€ %.2f", $Result['SellPrice']); ?></b></p>
-                        <h6> Inclusief BTW </h6>
+                        <h6> Including taxes </h6>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="StockItemDescription">
-            <h3>Artikel beschrijving</h3>
+            <h3>Article description</h3>
             <p><?php print $Result['SearchDetails']; ?></p>
         </div>
         <div id="StockItemSpecifications">
-            <h3>Artikel specificaties</h3>
+            <h3>Article information</h3>
             <?php
             $CustomFields = json_decode($Result['CustomFields'], true);
             if (is_array($CustomFields)) { ?>
                 <table>
                 <thead>
-                <th>Naam</th>
+                <th>Name</th>
                 <th>Data</th>
                 </thead>
                 <?php
