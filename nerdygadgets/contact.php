@@ -6,7 +6,7 @@ include "header.php";
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>contactpagina</title>
+    <title>Contact page</title>
 </head>
 <body>
 <div style="text-align: center;">
