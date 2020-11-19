@@ -72,20 +72,20 @@ include "connect.php";
                 ?>
 
                 <li>
-                    <a href="categories.php" class="HrefDecoration">Alle categorieën</a>
+                    <a href="categories.php" class="HrefDecoration">Categories</a>
                 </li>
 
             </ul>
         </div>
         <ul id="ul-class-navigation">
             <li>
-                <a href="inloggen.php" class="HrefDecoration">Inloggen</a>
+                <a href="inloggen.php" class="HrefDecoration">Log in</a>
             </li>
             <li>
                 <a>| </a>
             </li>
             <li>
-                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Zoeken</a>
+                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Search</a>
             </li>
         </ul>
     </div>
