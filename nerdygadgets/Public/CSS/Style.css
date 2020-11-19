@@ -11,6 +11,7 @@ body {
     font-family: MmrText;
     src: url(/Public/fonts/mmrtext.ttf);
 }
+.Logo{width:250px;height:150px;}
 select {
     margin: 50px;
     width: 100%;
