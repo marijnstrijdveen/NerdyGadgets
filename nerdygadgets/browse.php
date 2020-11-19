@@ -90,7 +90,7 @@ if ($CategoryID == "") {
 
     $Query = "
                 SELECT SI.StockItemID, SI.StockItemName, SI.MarketingComments, ROUND(TaxRate * RecommendedRetailPrice / 100 + RecommendedRetailPrice,2) as SellPrice,
-                (CASE WHEN (SIH.QuantityOnHand) >= ? THEN 'Ruime voorraad beschikbaar.' ELSE CONCAT('Voorraad: ',QuantityOnHand) END) AS QuantityOnHand, 
+                (CASE WHEN (SIH.QuantityOnHand) >= ? THEN 'Large stock available' ELSE CONCAT('Stock ',QuantityOnHand) END) AS QuantityOnHand, 
                 (SELECT ImagePath
                 FROM stockitemimages 
                 WHERE StockItemID = SI.StockItemID LIMIT 1) as ImagePath,
@@ -159,7 +159,7 @@ if (isset($amount)) {
     $AmountOfPages = ceil($amount["count(*)"] / $ProductsOnPage);
 }
 ?>
-<div id="FilterFrame"><h2 class="FilterText"><i class="fas fa-filter"></i> Filteren </h2>
+<div id="FilterFrame"><h2 class="FilterText"><i class="fas fa-filter"></i> Filter </h2>
     <form>
         <div id="FilterOptions">
             <h4 class="FilterTopMargin"><i class="fas fa-search"></i> Search</h4>
