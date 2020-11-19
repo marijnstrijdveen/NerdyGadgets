@@ -168,6 +168,6 @@ if ($R) {
         </div>
         <?php
     } else {
-        ?><h2 id="ProductNotFound">Het opgevraagde product is niet gevonden.</h2><?php
+        ?><h2 id="ProductNotFound">The requested product was not found. </h2><?php
     } ?>
 </div>
