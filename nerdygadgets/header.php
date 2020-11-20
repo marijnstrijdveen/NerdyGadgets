@@ -44,7 +44,9 @@ include "connect.php";
 <div class="Background">
     <div class="row" id="Header">
         <div class="col-2"><a href="./" id="LogoA">
-                <div id="LogoImage"></div>
+                <div id="LogoImage">
+                    <img src="Public/Img/Logo1.jpg" name="Logo1">
+                </div>
             </a></div>
         <div class="col-8" id="CategoriesBar">
             <ul id="ul-class">
@@ -72,17 +74,20 @@ include "connect.php";
                 ?>
 
                 <li>
-                    <a href="categories.php" class="HrefDecoration">Alle categorieën</a>
+                    <a href="categories.php" class="HrefDecoration">Categories</a>
                 </li>
 
             </ul>
         </div>
         <ul id="ul-class-navigation">
             <li>
-                <a href="inloggen.php" class="HrefDecoration">Inloggen</a>
+                <a href="inloggen.php" class="HrefDecoration">Log in</a>
             </li>
             <li>
-                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Zoeken</a>
+                <a>| </a>
+            </li>
+            <li>
+                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Search</a>
             </li>
         </ul>
     </div>
