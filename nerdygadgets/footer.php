@@ -2,10 +2,15 @@
 <br>
 </div>
 </div>
-<li>
-    <a href="contact.php" class="HrefDecoration">Contactpagina</a> <br>
-    <a href="verzending-en-bezorging.php" class="HrefDecoration">Verzending en bezorging</a>
-</li>
+<div style="text-align: center;">
+    <a href="contact.php" class="HrefDecoration">Contact page</a>
+    |
+    <a href="verzending-en-bezorging.php" class="HrefDecoration">Delivery information</a>
+
+</div>
 </div>
 </body>
+
 </html>
+
+

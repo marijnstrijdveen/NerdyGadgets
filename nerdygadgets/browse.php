@@ -90,7 +90,7 @@ if ($CategoryID == "") {
 
     $Query = "
                 SELECT SI.StockItemID, SI.StockItemName, SI.MarketingComments, ROUND(TaxRate * RecommendedRetailPrice / 100 + RecommendedRetailPrice,2) as SellPrice,
-                (CASE WHEN (SIH.QuantityOnHand) >= ? THEN 'Ruime voorraad beschikbaar.' ELSE CONCAT('Voorraad: ',QuantityOnHand) END) AS QuantityOnHand, 
+                (CASE WHEN (SIH.QuantityOnHand) >= ? THEN 'Large stock available' ELSE CONCAT('Stock ',QuantityOnHand) END) AS QuantityOnHand, 
                 (SELECT ImagePath
                 FROM stockitemimages 
                 WHERE StockItemID = SI.StockItemID LIMIT 1) as ImagePath,
@@ -159,14 +159,14 @@ if (isset($amount)) {
     $AmountOfPages = ceil($amount["count(*)"] / $ProductsOnPage);
 }
 ?>
-<div id="FilterFrame"><h2 class="FilterText"><i class="fas fa-filter"></i> Filteren </h2>
+<div id="FilterFrame"><h2 class="FilterText"><i class="fas fa-filter"></i> Filter </h2>
     <form>
         <div id="FilterOptions">
-            <h4 class="FilterTopMargin"><i class="fas fa-search"></i> Zoeken</h4>
+            <h4 class="FilterTopMargin"><i class="fas fa-search"></i> Search</h4>
             <input type="text" name="search_string" id="search_string"
                    value="<?php print (isset($_GET['search_string'])) ? $_GET['search_string'] : ""; ?>"
                    class="form-submit">
-            <h4 class="FilterTopMargin"><i class="fas fa-list-ol"></i> Aantal producten op pagina</h4>
+            <h4 class="FilterTopMargin"><i class="fas fa-list-ol"></i> Products per page</h4>
 
             <input type="hidden" name="category_id" id="category_id"
                    value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
@@ -184,23 +184,23 @@ if (isset($amount)) {
                 } ?>>75
                 </option>
             </select>
-            <h4 class="FilterTopMargin"><i class="fas fa-sort"></i> Sorteren</h4>
+            <h4 class="FilterTopMargin"><i class="fas fa-sort"></i> Sort</h4>
             <select name="sort" id="sort" onchange="this.form.submit()">>
                 <option value="price_low_high" <?php if ($_SESSION['sort'] == "price_low_high") {
                     print "selected";
-                } ?>>Prijs oplopend
+                } ?>>Price increasing
                 </option>
                 <option value="price_high_low" <?php if ($_SESSION['sort'] == "price_high_low") {
                     print "selected";
-                } ?> >Prijs aflopend
+                } ?> >Price decreasing
                 </option>
                 <option value="name_low_high" <?php if ($_SESSION['sort'] == "name_low_high") {
                     print "selected";
-                } ?>>Naam oplopend
+                } ?>>Name ascending
                 </option>
                 <option value="name_high_low" <?php if ($_SESSION['sort'] == "name_high_low") {
                     print "selected";
-                } ?>>Naam aflopend
+                } ?>>Name descending
                 </option>
             </select>
     </form>
@@ -226,10 +226,10 @@ if (isset($amount)) {
                     <div id="StockItemFrameRight">
                         <div class="CenterPriceLeftChild">
                             <h1 class="StockItemPriceText"><?php print sprintf("€ %0.2f", $row["SellPrice"]); ?></h1>
-                            <h6>Inclusief BTW </h6>
+                            <h6>Including taxes </h6>
                         </div>
                     </div>
-                    <h1 class="StockItemID">Artikelnummer: <?php print $row["StockItemID"]; ?></h1>
+                    <h1 class="StockItemID">Product number <?php print $row["StockItemID"]; ?></h1>
                     <p class="StockItemName"><?php print $row["StockItemName"]; ?></p>
                     <p class="StockItemComments"><?php print $row["MarketingComments"]; ?></p>
                     <h4 class="ItemQuantity"><?php print $row["QuantityOnHand"]; ?></h4>
@@ -269,7 +269,7 @@ if (isset($amount)) {
     } else {
         ?>
         <h2 id="NoSearchResults">
-            Yarr, er zijn geen resultaten gevonden.
+            No results have been found.
         </h2>
         <?php
     }

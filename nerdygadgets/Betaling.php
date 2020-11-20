@@ -35,7 +35,6 @@ include "header.php";
                             <body>
                             Land
                             <select>
-                                <option value="Select">Select</option>}
                                 <option value="Verenigdestaten">Verenigde Staten</option>
                                 <option value="Nederland">Nederland</option>
                                 <option value="Duitsland">Duitsland</option>
