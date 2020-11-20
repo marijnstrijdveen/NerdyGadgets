@@ -90,3 +90,8 @@ include "header.php";
     </section>
 
 <?php include "footer.php"; ?>
+
+if
+SQL -> employee = 1
+
+mag bewerken
