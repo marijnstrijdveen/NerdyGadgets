@@ -93,6 +93,12 @@ include "connect.php";
                 <a>| </a>
             </li>
             <li>
+                <a href="verlanglijstje.php" class="HrefDecoration">Wishlist</a>
+            </li>
+            <li>
+                <a>| </a>
+            </li>
+            <li>
                 <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Search</a>
             </li>
         </ul>

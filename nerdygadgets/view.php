@@ -114,6 +114,9 @@ if ($R) {
             <h2 class="StockItemNameViewSize StockItemName">
                 <?php print $Result['StockItemName']; ?>
             </h2>
+
+            <p><button>Add to wishlist</button></p>
+
             <div class="QuantityText"><?php print $Result['QuantityOnHand']; ?></div>
             <div id="StockItemHeaderLeft">
                 <div class="CenterPriceLeft">

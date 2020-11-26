@@ -49,7 +49,7 @@ include "header.php";
                                 </button>
                             </div>
                             <div class="col text-right">
-                                <a href="wachtwoord-vergeten.php">Wachtwoord vergeten?</a>
+                                <a href="Wachtwoord-vergeten.php">Wachtwoord vergeten?</a>
                             </div>
                         </div>
                     </form>
