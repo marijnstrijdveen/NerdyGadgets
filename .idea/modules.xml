@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/NerdyGadgets.iml" filepath="$PROJECT_DIR$/.idea/NerdyGadgets.iml" />
       <module fileurl="file://$PROJECT_DIR$/../kbs1-wide-world-importers-master (4)/.idea/kbs1-wide-world-importers-master (4).iml" filepath="$PROJECT_DIR$/../kbs1-wide-world-importers-master (4)/.idea/kbs1-wide-world-importers-master (4).iml" />
-      <module fileurl="file://$PROJECT_DIR$/../login/.idea/login.iml" filepath="$PROJECT_DIR$/../login/.idea/login.iml" />
     </modules>
   </component>
 </project>

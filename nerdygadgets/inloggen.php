@@ -3,6 +3,7 @@
 session_start();
 require('connect.php');
 
+$ingelogd = true;
 $invalid = false;
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -10,6 +11,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $password = mysqli_real_escape_string($Connection, $_POST['password']);
     $sql = mysqli_query($Connection, "SELECT * FROM `accounts` WHERE `email`='$email'  AND `password`='$password'  ");
     if (mysqli_num_rows($sql) == 1) {
+        session_start();
+        $_SESSION["userid"] = $email["userid"];
+        $_SESSION["userpwd"] = $password["userpwd"];
         $_SESSION['email'] = $email;
             header("location:account.php");
     } else {
@@ -18,8 +22,6 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 }
 include "header.php";
 ?>
-
-
 <section class="signin-container">
         <div class="container py-5">
             <h1>Inloggen</h1>

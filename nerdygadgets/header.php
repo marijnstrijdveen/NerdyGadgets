@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "connect.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en" style="background-color: rgb(35, 35, 47);">
@@ -80,9 +81,14 @@ include "connect.php";
             </ul>
         </div>
         <ul id="ul-class-navigation">
-            <li>
-                <a href="inloggen.php" class="HrefDecoration">Log in</a>
-            </li>
+            <?php
+            if (isset($_SESSION["userid"])){
+                echo "<li><a href='account.php'class='HrefDecoration'>Account | </a></li>";
+                echo "<li><a href='logout.php'class='HrefDecoration'>Log out</a></li>";
+            } else {
+                echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in</a></li>";
+            }
+            ?>
             <li>
                 <a>| </a>
             </li>
