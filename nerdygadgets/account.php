@@ -3,8 +3,7 @@ $Connection = mysqli_connect("localhost", "root", "", "nerdygadgets");
 mysqli_set_charset($Connection, 'latin1');
 include __DIR__ . "/header.php";
 
-$Query = " 
-           SELECT * from accounts where id = 5 ";
+$Query = "SELECT * from accounts where id = {$_SESSION['userid']}";
 
 $ShowStockLevel = 1000;
 $Statement = mysqli_prepare($Connection, $Query);
