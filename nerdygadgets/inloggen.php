@@ -16,7 +16,6 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         while ($row = mysqli_fetch_assoc($sql)) {
             $userid = $row["id"];
         }
-        //session_start(); //Kan deze regel niet weg? Session start op regel 3
         $_SESSION["userid"] = $userid;
         $_SESSION["userpwd"] = $password["userpwd"];
         $_SESSION['email'] = $email;
