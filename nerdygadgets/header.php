@@ -99,6 +99,12 @@ include "connect.php";
                 <a>| </a>
             </li>
             <li>
+                <a href="cart.php" class="HrefDecoration"><i class="fas fa-shopping-cart" style="color:#676EFF;"></i> Cart</a>
+            </li>
+            <li>
+                <a>| </a>
+            </li>
+            <li>
                 <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Search</a>
             </li>
         </ul>
