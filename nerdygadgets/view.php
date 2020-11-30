@@ -115,7 +115,7 @@ if ($R) {
                 <?php print $Result['StockItemName']; ?>
             </h2>
 
-            <p><button>Add to wishlist</button></p>
+            <button type="button" class="btn btn-primary">Add to wishlist</button>
 
             <div class="QuantityText"><?php print $Result['QuantityOnHand']; ?></div>
             <div id="StockItemHeaderLeft">
