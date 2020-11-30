@@ -5,39 +5,23 @@ require('connect.php');
 
 $ingelogd = true;
 $invalid = false;
+$userid = NULL;
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $invalid = true;
-
     $email = mysqli_real_escape_string($Connection, $_POST['email']);
     $password = mysqli_real_escape_string($Connection, $_POST['password']);
-    $sql = mysqli_query($Connection, "SELECT * FROM `accounts` WHERE `email`='$email'");
-
+    $sql = mysqli_query($Connection, "SELECT * FROM `accounts` WHERE `email`='$email'  AND `password`='$password'  ");
     if (mysqli_num_rows($sql) == 1) {
-        $accountData = $sql->fetch_array(MYSQLI_ASSOC);
-        /*
-            array(10) {
-                ["id"]=> string(2) "21"
-                ["fullname"]=> string(4) "Yana"
-                ["email"]=> string(19) "salsayana@gmail.com"
-                ["password"]=> string(32) "$2y$10$lDD7gUD4GQaFxUKwxqt1I.0Th"
-                ["phone"]=> string(6) "123456"
-                ["address"]=> string(4) "Dijk"
-                ["city"]=> string(6) "Amster"
-                ["postalcode"]=> string(6) "1234GV"
-                ["state"]=> string(2) "aw"
-                ["country"]=> string(9) "Nederland"
-            }
-        */
-
-        $passwordValid = password_verify($_POST['password'], $accountData['password']);
-
-        if($passwordValid) {
-            $_SESSION['userid'] = $accountData['id'];
-            $_SESSION['email'] = $accountData['email'];
-
-            header("location:account.php");
+        /* fetch associative array */
+        while ($row = mysqli_fetch_assoc($sql)) {
+            $userid = $row["id"];
         }
+        $_SESSION["userid"] = $userid;
+        $_SESSION["userpwd"] = $password["userpwd"];
+        $_SESSION['email'] = $email;
+            header("location:account.php");
+    } else {
+        $invalid = true;
     }
 }
 include "header.php";
