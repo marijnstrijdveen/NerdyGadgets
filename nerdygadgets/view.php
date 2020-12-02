@@ -4,9 +4,25 @@ include __DIR__ . '/init.php';
 
 $shows = new shows();
 $info = '';
+
 if (isset($_GET['add'])) {
     $info = $shows->add_cart($conn);
 }
+
+// view.php?id=76&wish=76 --> $_GET = array('id' => 76, 'wish' => 76)
+if (isset($_GET['wish'])) {
+    // Add new record to table "wishlist" with data:
+    //  $_SESSION['userid']; // Account ID
+    // and
+    // $_GET['wish']; // Stock Item ID
+
+    $addToWishlistSql = "INSERT INTO `wishlist`(account_id,stock_item_id) VALUES (?,?);";
+
+    $Statement = mysqli_prepare($Connection, $addToWishlistSql);
+    mysqli_stmt_bind_param($Statement, 'ii', $_SESSION['userid'], $_GET['wish']);
+    mysqli_stmt_execute($Statement);
+}
+
 $Query = " 
            SELECT SI.StockItemID, 
             (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice, 
@@ -23,7 +39,7 @@ $Query = "
             GROUP BY StockItemID";
 
 $ShowStockLevel = 1000;
-$Statement = mysqli_prepare($Connection, $Query);
+$Statement = mysqli_prepare($Connection, $Query); // view.php? id=76 --> $GET = array('id' => 76)
 mysqli_stmt_bind_param($Statement, "i", $_GET['id']);
 mysqli_stmt_execute($Statement);
 $ReturnableResult = mysqli_stmt_get_result($Statement);
@@ -122,7 +138,7 @@ include __DIR__ . '/header.php';
             <h2 class="StockItemNameViewSize StockItemName">
                 <?php print $Result['StockItemName']; ?>
             </h2>
-                <button type="button" class="btn btn-primary">Add to wishlist</button>
+                <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&wish=<?php echo $Result["StockItemID"]; ?>" class="btn btn-primary">Add to wishlist</a>
             <div class="QuantityText"><?php print $Result['QuantityOnHand']; ?></div>
             <div id="StockItemHeaderLeft">
                 <div class="CenterPriceLeft">
