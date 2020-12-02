@@ -6,7 +6,7 @@ if (isset($_POST['register']))   {
 
     $fullname = $_POST["fullname"];
     $email = $_POST["email"];
-    $password = password_hash('password', PASSWORD_DEFAULT);
+    $password = mysqli_real_escape_string($Connection, $_POST['password']);
     $phone = $_POST["phone"];
     $address = $_POST["address"];
     $city = $_POST["city"];

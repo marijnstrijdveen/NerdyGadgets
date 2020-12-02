@@ -5,20 +5,16 @@ require('connect.php');
 
 $ingelogd = true;
 $invalid = false;
-$userid = NULL;
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $email = mysqli_real_escape_string($Connection, $_POST['email']);
     $password = mysqli_real_escape_string($Connection, $_POST['password']);
     $sql = mysqli_query($Connection, "SELECT * FROM `accounts` WHERE `email`='$email'  AND `password`='$password'  ");
+    $row = mysqli_fetch_assoc($sql);
     if (mysqli_num_rows($sql) == 1) {
-        /* fetch associative array */
-        while ($row = mysqli_fetch_assoc($sql)) {
-            $userid = $row["id"];
-        }
-        $_SESSION["userid"] = $userid;
-        $_SESSION["userpwd"] = $password["userpwd"];
-        $_SESSION['email'] = $email;
+        session_start();
+        $_SESSION["userid"] = $row['id'];
+        $_SESSION['email'] = $row['email'];
             header("location:account.php");
     } else {
         $invalid = true;

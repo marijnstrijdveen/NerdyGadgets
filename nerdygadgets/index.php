@@ -1,13 +1,6 @@
 <?php
 include __DIR__ . "/header.php";
-
-
-
-require('connect.php');
-
-
 ?>
-
 <div class="IndexStyle">
     <div class="col-11">
         <div class="TextPrice">

@@ -91,5 +91,7 @@ include "header.php";
 
 <?php include "footer.php"; ?>
 
+if
+SQL -> employee = 1
 
-
+mag bewerken

@@ -1,9 +1,13 @@
 <?php
 $Connection = mysqli_connect("localhost", "root", "", "nerdygadgets");
 mysqli_set_charset($Connection, 'latin1');
+include('defines/connection.php');
+include('classes.php');
+$shows = new shows();
 include __DIR__ . "/header.php";
-
-$Query = " SELECT * from accounts where id = '" . $_SESSION['userid'] . "'";
+$id = $_SESSION['userid'];
+$Query = " 
+           SELECT * from accounts where id = '{$id}' ";
 
 $ShowStockLevel = 1000;
 $Statement = mysqli_prepare($Connection, $Query);
@@ -14,6 +18,10 @@ if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
     $Result = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC)[0];
 } else {
     $Result = null;
+}
+$show_orders = '';
+if (isset($_SESSION['userid'])) {
+    $show_orders = $shows->show_orders($conn);
 }
 ?>
 
@@ -64,6 +72,16 @@ if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
         <div class="col">
             <h3>Orders</h3>
             <ul class="list-group">
+                <li class="list-group-item bg-dark">
+                    <table width="100%">
+                    <tr>
+                            <th>OrderID</th>
+                            <th>Items</th>
+                            <th>Action</th>
+                        </tr>
+                        <?php echo $show_orders; ?>
+                    </table>
+                </li>
             </ul>
         </div>
     </div>

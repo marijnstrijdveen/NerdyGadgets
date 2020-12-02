@@ -2,12 +2,18 @@
 $Connection = mysqli_connect("localhost", "root", "", "nerdygadgets");
 mysqli_set_charset($Connection, 'latin1');
 include __DIR__ . "/header.php";
-
+include('defines/connection.php');
+include('classes.php');
+$shows = new shows();
+$info = '';
+if (isset($_GET['add'])) {
+    $info = $shows->add_cart($conn);
+}
 $Query = " 
            SELECT SI.StockItemID, 
             (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice, 
             StockItemName,
-            CONCAT('Stock ',QuantityOnHand)AS QuantityOnHand,
+            CONCAT('Voorraad: ',QuantityOnHand)AS QuantityOnHand,
             SearchDetails, 
             (CASE WHEN (RecommendedRetailPrice*(1+(TaxRate/100))) > 50 THEN 0 ELSE 6.95 END) AS SendCosts, MarketingComments, CustomFields, SI.Video,
             (SELECT ImagePath FROM stockgroups JOIN stockitemstockgroups USING(StockGroupID) WHERE StockItemID = SI.StockItemID LIMIT 1) as BackupImagePath   
@@ -45,6 +51,7 @@ if ($R) {
 }
 ?>
 <div id="CenteredContent">
+    <?php echo $info; ?>
     <?php
     if ($Result != null) {
         ?>
@@ -110,36 +117,37 @@ if ($R) {
             ?>
 
 
-            <h1 class="StockItemID">Productnumber <?php print $Result["StockItemID"]; ?></h1>
+            <h1 class="StockItemID">Artikelnummer: <?php print $Result["StockItemID"]; ?></h1>
             <h2 class="StockItemNameViewSize StockItemName">
                 <?php print $Result['StockItemName']; ?>
             </h2>
-
-            <button type="button" class="btn btn-primary">Add to wishlist</button>
-
+                <button type="button" class="btn btn-primary">Add to wishlist</button>
             <div class="QuantityText"><?php print $Result['QuantityOnHand']; ?></div>
             <div id="StockItemHeaderLeft">
                 <div class="CenterPriceLeft">
                     <div class="CenterPriceLeftChild">
                         <p class="StockItemPriceText"><b><?php print sprintf("€ %.2f", $Result['SellPrice']); ?></b></p>
-                        <h6> Including taxes </h6>
+                        <h6> Inclusief BTW </h6>
                     </div>
+                    
                 </div>
             </div>
+            <div>
+            <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&add=<?php echo $Result["StockItemID"]; ?>" class="cart-btn">Add to Cart</a>
         </div>
-
+        </div>
         <div id="StockItemDescription">
-            <h3>Product description</h3>
+            <h3>Artikel beschrijving</h3>
             <p><?php print $Result['SearchDetails']; ?></p>
         </div>
         <div id="StockItemSpecifications">
-            <h3>Product information</h3>
+            <h3>Artikel specificaties</h3>
             <?php
             $CustomFields = json_decode($Result['CustomFields'], true);
             if (is_array($CustomFields)) { ?>
                 <table>
                 <thead>
-                <th>Name</th>
+                <th>Naam</th>
                 <th>Data</th>
                 </thead>
                 <?php
@@ -171,6 +179,6 @@ if ($R) {
         </div>
         <?php
     } else {
-        ?><h2 id="ProductNotFound">The requested product was not found. </h2><?php
+        ?><h2 id="ProductNotFound">Het opgevraagde product is niet gevonden.</h2><?php
     } ?>
 </div>
