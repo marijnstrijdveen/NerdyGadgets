@@ -18,9 +18,15 @@ if (isset($_GET['wish'])) {
 
     $addToWishlistSql = "INSERT INTO `wishlist`(account_id,stock_item_id) VALUES (?,?);";
 
-    $Statement = mysqli_prepare($Connection, $addToWishlistSql);
-    mysqli_stmt_bind_param($Statement, 'ii', $_SESSION['userid'], $_GET['wish']);
-    mysqli_stmt_execute($Statement);
+    try {
+        $Statement = mysqli_prepare($Connection, $addToWishlistSql);
+        mysqli_stmt_bind_param($Statement, 'ii', $_SESSION['userid'], $_GET['wish']);
+        mysqli_stmt_execute($Statement);
+
+        $info = '<div class="alert alert-success">Product added to wishlist.</div>';
+    } catch (\Throwable $exception) {
+        $info = '<div class="alert alert-danger">Product already in wishlist.</div>';
+    }
 }
 
 $Query = " 
