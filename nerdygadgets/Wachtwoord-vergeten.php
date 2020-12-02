@@ -1,6 +1,9 @@
 <?php
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
-include "header.php";
+$headTitel = 'NerdyGadgets - Wachtwoord vergeten';
+include __DIR__ . '/header.php';
 ?>
     <section class="signin-container">
         <div class="container py-5">

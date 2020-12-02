@@ -42,7 +42,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 }
 
 $headTitel = 'NerdyGadgets - Login';
-include "header.php";
+include __DIR__ . '/header.php';
 ?>
 <section class="signin-container">
         <div class="container py-5">

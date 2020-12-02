@@ -1,5 +1,6 @@
 <?php
-include "header.php";
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
 if(isset($_POST['submit'])){
     $email1 = $_POST["email"];
@@ -11,6 +12,9 @@ if(isset($_POST['submit'])){
 
     echo "<script>window.location='contact.php'</script>";
 }
+
+$headTitel = 'NerdyGadgets - Administratie';
+include __DIR__ . '/header.php';
 ?>
 
 <form method="POST" name="aanpassing" action="">

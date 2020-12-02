@@ -1,5 +1,7 @@
 <?php
-include "header.php";
+
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
 $currentUserId = $_SESSION['userid'];
 $ShowStockLevel = 1000;
@@ -22,6 +24,9 @@ mysqli_stmt_bind_param($Statement, 'ii', $ShowStockLevel, $currentUserId);
 mysqli_stmt_execute($Statement);
 $ReturnableResult = mysqli_stmt_get_result($Statement);
 $ReturnableResult = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC);
+
+$headTitel = 'NerdyGadgets - Your Wishlist';
+include __DIR__ . '/header.php';
 ?>
 
 <div id="ResultsArea" class="Browse">
