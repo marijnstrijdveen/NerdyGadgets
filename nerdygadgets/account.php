@@ -1,20 +1,29 @@
 <?php
-$Connection = mysqli_connect("localhost", "root", "", "nerdygadgets");
-mysqli_set_charset($Connection, 'latin1');
-include __DIR__ . "/header.php";
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
-$Query = " SELECT * from accounts where id = '" . $_SESSION['userid'] . "'";
+$shows = new shows();
+$id = $_SESSION['userid'];
+$Query = "SELECT * from accounts where id = {$id}";
 
 $ShowStockLevel = 1000;
 $Statement = mysqli_prepare($Connection, $Query);
 //mysqli_stmt_bind_param($Statement, "i", $_GET['id']);
 mysqli_stmt_execute($Statement);
 $ReturnableResult = mysqli_stmt_get_result($Statement);
+$Result = null;
+
 if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
     $Result = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC)[0];
-} else {
-    $Result = null;
 }
+
+$show_orders = '';
+if ($id) {
+    $show_orders = $shows->show_orders($conn);
+}
+
+$headTitel = 'NerdyGadgets - Your Account';
+include __DIR__ . '/header.php';
 ?>
 
 <section class="breadcrumbSection container pt-3">
@@ -64,6 +73,16 @@ if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
         <div class="col">
             <h3>Orders</h3>
             <ul class="list-group">
+                <li class="list-group-item bg-dark">
+                    <table width="100%">
+                    <tr>
+                            <th>OrderID</th>
+                            <th>Items</th>
+                            <th>Action</th>
+                        </tr>
+                        <?php echo $show_orders; ?>
+                    </table>
+                </li>
             </ul>
         </div>
     </div>

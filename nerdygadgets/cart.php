@@ -1,7 +1,7 @@
 <?php
-session_start();
-include('defines/connection.php');
-include('classes.php');
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
+
 $shows = new shows();
 
 $info = '';
@@ -12,6 +12,10 @@ $info_dlt = '';
 if (isset($_GET['dlt_item'])) {
     $info_dlt = $shows->dlt_item($conn);
 }
+$checkout = '';
+if (isset($_REQUEST['checkout'])) {
+    $checkout = $shows->checkout($conn);
+} 
 $empty = '';
 if (isset($_GET['empty'])) {
     unset($_SESSION['cart']);
@@ -104,8 +108,10 @@ if (isset($_SESSION['cart'])) {
 
 <body>
 <div class="row" id="Header">
-        <div class="col-2"><a href="./" id="LogoA">
-                <div id="LogoImage"></div>
+    <div class="col-2"><a href="./" id="LogoA">
+            <div id="LogoImage">
+                <img src="Public/Img/Logo1.jpg" name="Logo1">
+            </div>
             </a></div>
         <div class="col-8" id="CategoriesBar">
             <ul id="ul-class">
@@ -133,6 +139,14 @@ if (isset($_SESSION['cart'])) {
             </ul>
         </div>
         <ul id="ul-class-navigation">
+        <?php
+            if (isset($_SESSION["userid"])){
+                echo "<li><a href='account.php'class='HrefDecoration'>Account | </a></li>";
+                echo "<li><a href='logout.php'class='HrefDecoration'>Log out</a></li>";
+            } else {
+                echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in</a></li>";
+            }
+            ?>
             <li>
                 <a href="cart.php" class="HrefDecoration"><i class="fas fa-shopping-cart" style="color:#676EFF;" aria-hidden="true"></i> Cart</a>
             </li>
@@ -144,8 +158,9 @@ if (isset($_SESSION['cart'])) {
     <div class="row main-cart">
     <div class="container">
         <h1>Cart - NerdyGadgets</h1>
+        <?php echo $checkout;?>
         <?php echo $info_dlt; echo $empty; echo $info; ?>
-        <form name="cart">
+        <form name="cart" method="POST">
             <table name="cart" class="table  table-bordered">
                 <tr>
                     <th></th>
@@ -178,7 +193,7 @@ if (isset($_SESSION['cart'])) {
                     <td><input type="text" name="grand_total" value="" jAutoCalc="{sub_total} + {tax_total}"></td>
                 </tr>
                 <tr>
-                    <td colspan="99"><a href="cart.php?empty" class="btn btn-danger">Empty Cart</a>&nbsp&nbsp<a href="#" class="btn btn-success">Checkout</a></td>
+                    <td colspan="99"><a href="cart.php?empty" class="btn btn-danger">Empty Cart</a>&nbsp&nbsp <button name="checkout" class="btn btn-success">Checkout with IDEAL</button></td>
                 </tr>
             </table>
         </form>

@@ -1,31 +1,31 @@
 <?php
-
-require('connect.php');
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
 if (isset($_POST['register']))   {
-
-    $fullname = $_POST["fullname"];
-    $email = $_POST["email"];
-    $password = password_hash('password', PASSWORD_DEFAULT);
-    $phone = $_POST["phone"];
-    $address = $_POST["address"];
-    $city = $_POST["city"];
-    $postalcode = $_POST["postalcode"];
-    $state = $_POST["state"];
-    $country = $_POST["country"];
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $city = $_POST['city'];
+    $postalcode = $_POST['postalcode'];
+    $state = $_POST['state'];
+    $country = $_POST['country'];
 
     $query = "INSERT INTO accounts(fullname, email, password, phone, address, city, postalcode, state, country) VALUES ('$fullname','$email','$password','$phone','$address','$city','$postalcode','$state','$country')";
 
     $statement = mysqli_query($Connection, $query);
 
-    if ($statement = true) {
+    if ($statement) {
         echo '<span class="alert alert-success bg-green">Account succesvol aangemaakt</span>';
     } else {
         echo '<span class="alert alert-success">Something went wrong</span>';
     }
     }
 
-include "header.php";
+$headTitel = 'NerdyGadgets - Registreren';
+include __DIR__ . '/header.php';
 ?>
 <section class="signin-container">
     <div class="container py-5">

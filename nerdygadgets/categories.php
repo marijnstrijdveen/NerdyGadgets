@@ -1,6 +1,6 @@
 <?php
-
-include __DIR__ . "/header.php";
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
 $Query = "
             SELECT StockGroupID, StockGroupName, ImagePath
@@ -15,6 +15,8 @@ mysqli_stmt_execute($Statement);
 $Result = mysqli_stmt_get_result($Statement);
 $StockGroups = mysqli_fetch_all($Result, MYSQLI_ASSOC);
 
+$headTitel = 'NerdyGadgets - Categiries';
+include __DIR__ . '/header.php';
 ?>
 <div id="Wrap">
     <?php if (isset($StockGroups)) {

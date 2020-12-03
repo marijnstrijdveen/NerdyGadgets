@@ -1,13 +1,11 @@
 <?php
-include __DIR__ . "/header.php";
 
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
-
-require('connect.php');
-
-
+$headTitel = 'NerdyGadgets - Home Page';
+include __DIR__ . '/header.php';
 ?>
-
 <div class="IndexStyle">
     <div class="col-11">
         <div class="TextPrice">

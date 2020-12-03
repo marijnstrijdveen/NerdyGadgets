@@ -1,8 +1,3 @@
-<?php
-session_start();
-include "connect.php";
-
-?>
 <!DOCTYPE html>
 <html lang="en" style="background-color: rgb(35, 35, 47);">
 <head>
@@ -18,8 +13,9 @@ include "connect.php";
             src: url(/Public/fonts/mmrtext.ttf);
         }
     </style>
-    <meta charset="ISO-8859-1">
-    <title>NerdyGadgets</title>
+    <meta charset="UTF-8">
+    <title><?=$headTitel ?? 'NerdyGadgets'?></title>
+
     <link rel="stylesheet" href="Public/CSS/Style.css" type="text/css">
     <link rel="stylesheet" href="Public/CSS/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="Public/CSS/nha3fuq.css">
@@ -81,14 +77,9 @@ include "connect.php";
             </ul>
         </div>
         <ul id="ul-class-navigation">
-            <?php
-            if (isset($_SESSION["userid"])){
-                echo "<li><a href='account.php'class='HrefDecoration'>Account | </a></li>";
-                echo "<li><a href='logout.php'class='HrefDecoration'>Log out</a></li>";
-            } else {
-                echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in</a></li>";
-            }
-            ?>
+            <li>
+                <a href="inloggen.php" class="HrefDecoration">Log in</a>
+            </li>
             <li>
                 <a>| </a>
             </li>
