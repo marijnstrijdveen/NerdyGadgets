@@ -80,26 +80,22 @@ include "connect.php";
             </ul>
         </div>
         <ul id="ul-class-navigation">
-            <li>
-                <a href="inloggen.php" class="HrefDecoration">Log in</a>
-            </li>
-            <li>
-                <a>| </a>
-            </li>
+            <?php
+            if (isset($_SESSION["userid"])){
+                echo "<li><a href='account.php'class='HrefDecoration'>Account | </a></li>";
+                echo "<li><a href='logout.php'class='HrefDecoration'>Log out |</a></li>";
+            } else {
+                echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in</a></li>";
+            }
+            ?>
             <li>
                 <a href="verlanglijstje.php" class="HrefDecoration">Wishlist</a>
             </li>
             <li>
-                <a>| </a>
+                <a href="cart.php" class="HrefDecoration"><i class="fas fa-shopping-cart" style="color:#676EFF;" aria-hidden="true"></i> Cart</a>
             </li>
             <li>
-                <a href="cart.php" class="HrefDecoration"><i class="fas fa-shopping-cart" style="color:#676EFF;"></i> Cart</a>
-            </li>
-            <li>
-                <a>| </a>
-            </li>
-            <li>
-                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;"></i> Search</a>
+                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;" aria-hidden="true"></i> Zoeken</a>
             </li>
         </ul>
     </div>

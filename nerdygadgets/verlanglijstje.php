@@ -58,9 +58,7 @@ $ReturnableResult = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC);
         <?php
     } else {
         ?>
-        <h2 id="NoSearchResults">
-            No results have been found.
-        </h2>
+
         <?php
     }
     ?>
