@@ -31,41 +31,43 @@ include __DIR__ . '/header.php';
 <div id="ResultsArea" class="Browse">
     <h2>Your wishlist</h2>
     <?php
-    if (isset($ReturnableResult) && count($ReturnableResult) > 0) {
-        foreach ($ReturnableResult as $row) {
-            ?>
-            <a class="ListItem" href='view.php?id=<?php print $row['StockItemID']; ?>'>
-                <div id="ProductFrame">
-                    <?php
-                    if (isset($row['ImagePath'])) { ?>
-                        <div class="ImgFrame"
-                             style="background-image: url('<?php print "Public/StockItemIMG/" . $row['ImagePath']; ?>'); background-size: 230px; background-repeat: no-repeat; background-position: center;"></div>
-                    <?php } else if (isset($row['BackupImagePath'])) { ?>
-                        <div class="ImgFrame"
-                             style="background-image: url('<?php print "Public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
-                    <?php }
-                    ?>
-
-                    <div id="StockItemFrameRight">
-                        <div class="CenterPriceLeftChild">
-                            <h1 class="StockItemPriceText"><?php print sprintf("€ %0.2f", $row["SellPrice"]); ?></h1>
-                            <h6>Including taxes </h6>
-                        </div>
-                    </div>
-                    <h1 class="StockItemID">Product number <?php print $row["StockItemID"]; ?></h1>
-                    <p class="StockItemName"><?php print $row["StockItemName"]; ?></p>
-                    <p class="StockItemComments"><?php print $row["MarketingComments"]; ?></p>
-                    <h4 class="ItemQuantity"><?php print $row["QuantityOnHand"]; ?></h4>
-                </div>
-            </a>
-        <?php } ?>
-        <?php
-    } else {
-        ?>
-
-        <?php
-    }
+    if (isset($ReturnableResult) && count($ReturnableResult) > 0):
+        foreach ($ReturnableResult as $row):
     ?>
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-4">
+                        <a href='view.php?id=<?=$row['StockItemID']?>'>
+                            <?php if (isset($row['ImagePath'])): ?>
+                                <div class="ImgFrame" style="background-image: url('<?php print "Public/StockItemIMG/" . $row['ImagePath']; ?>'); background-size: 230px; background-repeat: no-repeat; background-position: center;"></div>
+                            <?php elseif (isset($row['BackupImagePath'])): ?>
+                                <div class="ImgFrame" style="background-image: url('<?php print "Public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
+                            <?php endif; ?>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href='view.php?id=<?=$row['StockItemID']?>'>
+                            <h1 class="StockItemID">Product number <?=$row["StockItemID"]?></h1>
+                            <div class="StockItemName"><?=$row["StockItemName"]?></div>
+                            <div class="StockItemComments"><?=$row["MarketingComments"]?></div>
+                        </a>
+                        <div class="StockItemButtons"><button>BEEP</button></div>
+                    </div>
+                    <div class="col-2">
+                        <h1 class="StockItemPriceText"><?php print sprintf("€ %0.2f", $row["SellPrice"]); ?></h1>
+                        <h6>Including taxes</h6>
+                        <div class="align-bottom"><?=$row["QuantityOnHand"]?></div>
+                    </div>
+                </div>
+            </div>
+    <?php
+        endforeach;
+    else:
+    ?>
+
+
+
+    <?php endif; ?>
 </div>
 
 <?php
