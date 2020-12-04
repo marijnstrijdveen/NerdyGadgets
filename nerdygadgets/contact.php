@@ -1,5 +1,6 @@
 <?php
-include "header.php";
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
 
 $query= "SELECT *
 FROM contact";
@@ -17,15 +18,10 @@ foreach ($R as $info){
     $adres = $info['address'];
 }
 
+$headTitel = 'NerdyGadgets - Contact Page';
+include __DIR__ . '/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Contact page</title>
-</head>
-<body>
 <div style="text-align: center;">
 <b>Welkom op de contactpagina van NerdyGadgets!</b> <br> <br>
 <b>Over ons:</b> <br>
@@ -55,12 +51,6 @@ if (!empty($_SESSION['userid'])) {
 }
 ?>
 </div>
-
-
-</body>
-</html>
-
-
 
 <?php
 include "footer.php";
