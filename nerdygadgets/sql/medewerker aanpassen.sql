@@ -1,0 +1,1 @@
+UPDATE accounts set medewerker = '1' where id=5

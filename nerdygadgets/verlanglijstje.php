@@ -62,9 +62,7 @@ include __DIR__ . '/header.php';
         <?php
     } else {
         ?>
-        <h2 id="NoSearchResults">
-            No results have been found.
-        </h2>
+
         <?php
     }
     ?>

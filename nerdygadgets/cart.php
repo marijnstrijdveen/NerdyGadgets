@@ -130,30 +130,33 @@ if (isset($_SESSION['cart'])) {
                                         <li>
                         <a href="browse.php?category_id=7" class="HrefDecoration">USB Novelties</a>
                     </li>
-                                        <li style="display: none;">
+                                        <li>
                         <a href="browse.php?category_id=9" class="HrefDecoration">Toys</a>
                     </li>
                                     <li>
-                    <a href="categories.php" class="HrefDecoration">Alle categorieën</a>
+                    <a href="categories.php" class="HrefDecoration">Categories</a>
                 </li>
             </ul>
         </div>
-        <ul id="ul-class-navigation">
+    <ul id="ul-class-navigation">
         <?php
-            if (isset($_SESSION["userid"])){
-                echo "<li><a href='account.php'class='HrefDecoration'>Account | </a></li>";
-                echo "<li><a href='logout.php'class='HrefDecoration'>Log out</a></li>";
-            } else {
-                echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in</a></li>";
-            }
-            ?>
-            <li>
-                <a href="cart.php" class="HrefDecoration"><i class="fas fa-shopping-cart" style="color:#676EFF;" aria-hidden="true"></i> Cart</a>
-            </li>
-            <li>
-                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;" aria-hidden="true"></i> Zoeken</a>
-            </li>
-        </ul>
+        if (isset($_SESSION["userid"])){
+            echo "<li><a href='account.php'class='HrefDecoration'>Account | </a></li>";
+            echo "<li><a href='logout.php'class='HrefDecoration'>Log out |</a></li>";
+        } else {
+            echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in</a></li>";
+        }
+        ?>
+        <li>
+            <a href="verlanglijstje.php" class="HrefDecoration">Wishlist</a>
+        </li>
+        <li>
+            <a href="cart.php" class="HrefDecoration"><i class="fas fa-shopping-cart" style="color:#676EFF;" aria-hidden="true"></i> Cart</a>
+        </li>
+        <li>
+            <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;" aria-hidden="true"></i> Zoeken</a>
+        </li>
+    </ul>
     </div>
     <div class="row main-cart">
     <div class="container">
@@ -176,7 +179,7 @@ if (isset($_SESSION['cart'])) {
                     <td colspan="4">&nbsp;</td>
                     <td>Subtotal</td>
                     <td>&nbsp;</td>
-                    <td><input type="text" name="sub_total" value="" jAutoCalc="SUM({item_total})"></td>
+                    <td><input type="text" name="sub_total" value="" jAutoCalc="SUM({item_total})" disabled></td>
                 </tr>
                 <tr>
                     <td colspan="4">&nbsp;</td>
@@ -190,7 +193,7 @@ if (isset($_SESSION['cart'])) {
                     <td colspan="4">&nbsp;</td>
                     <td>Total</td>
                     <td>&nbsp;</td>
-                    <td><input type="text" name="grand_total" value="" jAutoCalc="{sub_total} + {tax_total}"></td>
+                    <td><input type="text" name="grand_total" value="" jAutoCalc="{sub_total} + {tax_total}" disabled></td>
                 </tr>
                 <tr>
                     <td colspan="99"><a href="cart.php?empty" class="btn btn-danger">Empty Cart</a>&nbsp&nbsp <button name="checkout" class="btn btn-success">Checkout with IDEAL</button></td>
