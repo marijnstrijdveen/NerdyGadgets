@@ -1,5 +1,10 @@
 <?php
-include __DIR__ . "/header.php";
+
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
+
+$headTitel = 'NerdyGadgets - Home Page';
+include __DIR__ . '/header.php';
 ?>
 <div class="IndexStyle">
     <div class="col-11">

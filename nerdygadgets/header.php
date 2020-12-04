@@ -1,7 +1,3 @@
-<?php
-session_start();
-include "connect.php";
-?>
 <!DOCTYPE html>
 <html lang="en" style="background-color: rgb(35, 35, 47);">
 <head>
@@ -17,8 +13,9 @@ include "connect.php";
             src: url(/Public/fonts/mmrtext.ttf);
         }
     </style>
-    <meta charset="ISO-8859-1">
-    <title>NerdyGadgets</title>
+    <meta charset="UTF-8">
+    <title><?=$headTitel ?? 'NerdyGadgets'?></title>
+
     <link rel="stylesheet" href="Public/CSS/Style.css" type="text/css">
     <link rel="stylesheet" href="Public/CSS/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="Public/CSS/nha3fuq.css">

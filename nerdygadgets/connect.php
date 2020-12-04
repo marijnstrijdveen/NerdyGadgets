@@ -8,6 +8,5 @@ try {
     $DatabaseAvailable = false;
 }
 if (!$DatabaseAvailable) {
-    ?><h2>Website wordt op dit moment onderhouden.</h2><?php
-    die();
+    die('<h2>Website wordt op dit moment onderhouden.</h2>');
 }

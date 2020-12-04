@@ -1,4 +1,10 @@
-<?php include "header.php" ?>
+<?php
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
+
+$headTitel = 'NerdyGadgets - Bezirging informatie';
+include __DIR__ . '/header.php';
+?>
 
     <div style="text-align: center;">
     <h2>Verzending en Bezorging</h2>

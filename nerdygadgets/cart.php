@@ -1,7 +1,7 @@
 <?php
-session_start();
-include('defines/connection.php');
-include('classes.php');
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
+
 $shows = new shows();
 
 $info = '';

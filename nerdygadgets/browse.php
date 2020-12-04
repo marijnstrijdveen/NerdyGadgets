@@ -1,5 +1,7 @@
 <?php
-include __DIR__ . "/header.php";
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
+
 $SearchString = "";
 $ReturnableResult = null;
 if (isset($_GET['search_string'])) {
@@ -158,6 +160,9 @@ $amount = $Result[0];
 if (isset($amount)) {
     $AmountOfPages = ceil($amount["count(*)"] / $ProductsOnPage);
 }
+
+$headTitel = 'NerdyGadgets - Browse';
+include __DIR__ . '/header.php';
 ?>
 <div id="FilterFrame"><h2 class="FilterText"><i class="fas fa-filter"></i> Filter </h2>
     <form>

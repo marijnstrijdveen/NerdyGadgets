@@ -1,9 +1,7 @@
 <?php
-$Connection = mysqli_connect("localhost", "root", "", "nerdygadgets");
-mysqli_set_charset($Connection, 'latin1');
-include __DIR__ . "/header.php";
-include('defines/connection.php');
-include('classes.php');
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
+
 $shows = new shows();
 $info = '';
 if (isset($_GET['add'])) {
@@ -49,6 +47,9 @@ $R = mysqli_fetch_all($R, MYSQLI_ASSOC);
 if ($R) {
     $Images = $R;
 }
+
+$headTitel = 'NerdyGadgets - Productie';
+include __DIR__ . '/header.php';
 ?>
 <div id="CenteredContent">
     <?php echo $info; ?>

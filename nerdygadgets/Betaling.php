@@ -1,5 +1,9 @@
 <?php
-include "header.php";
+include __DIR__ . '/init.php';
+/** @var $Connection mysqli */
+
+$headTitel = 'NerdyGadgets - Payment';
+include __DIR__ . '/header.php';
 ?>
 
     <section class="signin-container">
@@ -91,7 +95,5 @@ include "header.php";
 
 <?php include "footer.php"; ?>
 
-if
-SQL -> employee = 1
 
-mag bewerken
+
