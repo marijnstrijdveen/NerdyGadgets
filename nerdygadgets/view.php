@@ -10,7 +10,7 @@ if (isset($_GET['add'])) {
 }
 
 // view.php?id=76&wish=76 --> $_GET = array('id' => 76, 'wish' => 76)
-if (isset($_GET['wish'])) {
+if (isset($_GET['wish'])) { // is set -- есть задано
     // Add new record to table "wishlist" with data:
     //  $_SESSION['userid']; // Account ID
     // and
@@ -144,7 +144,7 @@ include __DIR__ . '/header.php';
             <h2 class="StockItemNameViewSize StockItemName">
                 <?php print $Result['StockItemName']; ?>
             </h2>
-                <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&wish=<?php echo $Result["StockItemID"]; ?>" class="btn btn-primary">Add to wishlist</a>
+                <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&wish=<?php echo $Result["StockItemID"]; ?>" class="btn btn-primary">&#128151</a>
             <div class="QuantityText"><?php print $Result['QuantityOnHand']; ?></div>
             <div id="StockItemHeaderLeft">
                 <div class="CenterPriceLeft">
