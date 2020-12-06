@@ -78,7 +78,7 @@ include __DIR__ . '/header.php';
                             <div class="StockItemName"><?=$row['StockItemName']?></div>
                             <div class="StockItemComments"><?=$row['MarketingComments']?></div>
                         </a>
-                        <a href="verlanglijstje.php?add=<?=$row['StockItemID']?>" class="cart-btn">Add to Cart</a>
+                        <a href="verlanglijstje.php?add=<?=$row['StockItemID']?>" class="btn btn-danger">Add to Cart</a>
 
                         <a href="verlanglijstje.php?wish=<?=$row['StockItemID']?>" class="btn btn-primary">Remove from wishlist</a>
                     </div>

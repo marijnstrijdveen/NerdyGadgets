@@ -144,7 +144,7 @@ include __DIR__ . '/header.php';
             <h2 class="StockItemNameViewSize StockItemName">
                 <?php print $Result['StockItemName']; ?>
             </h2>
-                <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&wish=<?php echo $Result["StockItemID"]; ?>" class="btn btn-primary">&#128151</a>
+                <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&wish=<?php echo $Result["StockItemID"]; ?>" class="btn btn-lg">&#128151</a>
             <div class="QuantityText"><?php print $Result['QuantityOnHand']; ?></div>
             <div id="StockItemHeaderLeft">
                 <div class="CenterPriceLeft">
@@ -156,7 +156,7 @@ include __DIR__ . '/header.php';
                 </div>
             </div>
             <div>
-            <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&add=<?php echo $Result["StockItemID"]; ?>" class="cart-btn">Add to Cart</a>
+            <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&add=<?php echo $Result["StockItemID"]; ?>" class="btn btn-danger">Add to Cart</a>
         </div>
         </div>
         <div id="StockItemDescription">
