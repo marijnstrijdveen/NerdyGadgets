@@ -38,7 +38,7 @@ if (isset($_SESSION['cart'])) {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <title>Cart</title>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="dist/jautocalc.js"></script>
+    <script type="text/javascript" src="dist/jautocalc.min.js"></script>
     <link rel="stylesheet" href="Public/CSS/Style.css?a=<?php echo time();   ?>" type="text/css">
     <link rel="apple-touch-icon" sizes="57x57" href="Public/Favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="Public/Favicon/apple-icon-60x60.png">
