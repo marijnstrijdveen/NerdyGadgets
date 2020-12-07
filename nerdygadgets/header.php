@@ -42,7 +42,7 @@
     <div class="row" id="Header">
         <div class="col-2"><a href="./" id="LogoA">
                 <div id="LogoImage">
-                    <img src="Public/Img/Logo1.jpg" name="Logo1">
+                    <img src="Public/Img/Logo.jpg" name="Logo1">
                 </div>
             </a></div>
         <div class="col-8" id="CategoriesBar">
