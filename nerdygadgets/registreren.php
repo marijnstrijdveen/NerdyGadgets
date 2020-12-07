@@ -47,7 +47,7 @@ include __DIR__ . '/header.php';
                         <label for="email">Woonplaats</label>
                         <input class="form-control" type="text" name="city" id="city" placeholder="Vul hier uw wonnplaats in" required>
                         <label for="email">postcode</label>
-                        <input class="form-control" type="text" name="postalcode" id="postalcode" placeholder="Vul hier uw postcode in" required>
+                        <input class="form-control" type="text" name="postalcode" id="postalcode" placeholder="Vul hier uw postcode in" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" maxlength=7 required>
                         <label for="email">provincie</label>
                         <input class="form-control" type="text" name="state" id="state" placeholder="Vul hier uw provincie in" required>
                         <label for="email">Land</label>
@@ -55,7 +55,7 @@ include __DIR__ . '/header.php';
                     </div>
                     <div class="form-row">
                         <div class="col">
-                            <button class="btn btn-primary" name="register" type="submit">
+                            <button href="inloggen.php" class="btn btn-primary" name="register" type="submit">
                                 Registreren
                             </button>
                         </div>

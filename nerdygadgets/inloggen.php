@@ -70,9 +70,9 @@ include __DIR__ . '/header.php';
                                     Inloggen
                                 </button>
                             </div>
-                            <div class="col text-right">
-                                <a href="Wachtwoord-vergeten.php">Wachtwoord vergeten?</a>
-                            </div>
+<!--                            <div class="col text-right">-->
+<!--                                <a href="Wachtwoord-vergeten.php">Wachtwoord vergeten?</a>-->
+<!--                            </div>-->
                         </div>
                     </form>
                 </div>
