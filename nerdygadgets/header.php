@@ -82,7 +82,7 @@
                 echo "<li><a href='account.php'class='HrefDecoration'>Account | </a></li>";
                 echo "<li><a href='logout.php'class='HrefDecoration'>Log out |</a></li>";
             } else {
-                echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in</a></li>";
+                echo "<li><a href='inloggen.php'class='HrefDecoration'>Log in |</a></li>";
             }
             ?>
             <li>

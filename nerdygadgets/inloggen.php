@@ -36,7 +36,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $_SESSION['userid'] = $accountData['id'];
             $_SESSION['email'] = $accountData['email'];
 
-            header("location:account.php");
+            header("location:categories.php");
         }
     }
 }
