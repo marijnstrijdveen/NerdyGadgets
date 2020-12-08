@@ -46,14 +46,14 @@ include __DIR__ . '/header.php';
 ?>
 <section class="signin-container">
         <div class="container py-5">
-            <h1>Inloggen</h1>
+            <h1>Log in</h1>
             <div class="row">
                 <div class="col-md-6">
                     <form method="post">
                         <div class="form-group">
                         <?php if ($invalid) : ?>
                             <div class="alert alert-danger">
-                                Er is geen account gevonden met deze combinatie.
+                                No account has been found.
                             </div>
                         <?php endif; ?>
                             <label for="email">Email</label>
@@ -61,13 +61,13 @@ include __DIR__ . '/header.php';
                         </div>
 
                         <div class="form-group">
-                            <label for="password">Wachtwoord</label>
+                            <label for="password">Password</label>
                             <input class="form-control" type="password" name="password" id="password" required>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <button class="btn btn-primary" name="login" type="submit">
-                                    Inloggen
+                                    Log in
                                 </button>
                             </div>
 <!--                            <div class="col text-right">-->
@@ -79,15 +79,15 @@ include __DIR__ . '/header.php';
                 <div class="col-md-6">
                     <div class="card bg-dark position-sticky" style="top: 100px">
                         <div class="card-body">
-                            <h5 class="card-title">Maak een account aan</h5>
+                            <h5 class="card-title">Make an account</h5>
                             <div class="card-text">
-                                Word lid van Nerdygadgets en maak gebruik van:
+                                Become a member of NerdyGadgets and make use of extra benefits!:
                                 <ul>
-                                    <li>Sneller afrekenen</li>
-                                    <li>Aanbiedingen</li>
+                                    <li>Faster paying</li>
+                                    <li>Discounts</li>
                                 </ul>
                                 <a href="registreren.php" class="btn btn-primary">
-                                    Account aanmaken
+                                    Make account
                                 </a>
                             </div>
                         </div>

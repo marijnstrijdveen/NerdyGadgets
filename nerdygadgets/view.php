@@ -140,7 +140,7 @@ include __DIR__ . '/header.php';
             ?>
 
 
-            <h1 class="StockItemID">Artikelnummer: <?php print $Result["StockItemID"]; ?></h1>
+            <h1 class="StockItemID">Article number: <?php print $Result["StockItemID"]; ?></h1>
             <h2 class="StockItemNameViewSize StockItemName">
                 <?php print $Result['StockItemName']; ?>
             </h2>
@@ -150,7 +150,7 @@ include __DIR__ . '/header.php';
                 <div class="CenterPriceLeft">
                     <div class="CenterPriceLeftChild">
                         <p class="StockItemPriceText"><b><?php print sprintf("€ %.2f", $Result['SellPrice']); ?></b></p>
-                        <h6> Inclusief BTW </h6>
+                        <h6> Including BTW </h6>
                     </div>
                     
                 </div>
@@ -160,17 +160,17 @@ include __DIR__ . '/header.php';
         </div>
         </div>
         <div id="StockItemDescription">
-            <h3>Artikel beschrijving</h3>
+            <h3>Article description</h3>
             <p><?php print $Result['SearchDetails']; ?></p>
         </div>
         <div id="StockItemSpecifications">
-            <h3>Artikel specificaties</h3>
+            <h3>Article specifications</h3>
             <?php
             $CustomFields = json_decode($Result['CustomFields'], true);
             if (is_array($CustomFields)) { ?>
                 <table>
                 <thead>
-                <th>Naam</th>
+                <th>Name</th>
                 <th>Data</th>
                 </thead>
                 <?php
@@ -202,6 +202,6 @@ include __DIR__ . '/header.php';
         </div>
         <?php
     } else {
-        ?><h2 id="ProductNotFound">Het opgevraagde product is niet gevonden.</h2><?php
+        ?><h2 id="ProductNotFound">The product wasn't found. </h2><?php
     } ?>
 </div>

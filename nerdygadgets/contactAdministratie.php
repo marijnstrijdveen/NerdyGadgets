@@ -17,10 +17,10 @@ $headTitel = 'NerdyGadgets - Administratie';
 include __DIR__ . '/header.php';
 ?>
 
-<form method="POST" name="aanpassing" action="">
+<form method="POST" name="adjustment" action="">
     Email: <input type="text" name="email" value="">
-    Telefoonnummer: <input type="text" name="phone" value="">
-    Adres: <input type="text" name="address" value="">
-    <input type="submit" name='submit' value="Opslaan">
+    Phone number: <input type="text" name="phone" value="">
+    Address: <input type="text" name="address" value="">
+    <input type="submit" name='submit' value="Save">
 </form>
 

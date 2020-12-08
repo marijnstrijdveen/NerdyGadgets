@@ -39,7 +39,7 @@ include __DIR__ . '/header.php';
                             <body>
                             Land
                             <select>
-                                <option value="Verenigdestaten">Verenigde Staten</option>
+                                <option value="Verenigdestaten">United states</option>
                                 <option value="Nederland">Nederland</option>
                                 <option value="Duitsland">Duitsland</option>
                                 <option value="Canada">Canada</option>
@@ -63,7 +63,7 @@ include __DIR__ . '/header.php';
                         <div class="form-row">
                             <div class="col">
                                 <button class="btn btn-primary" name="Back" type="submit">
-                                    <- Terug naar winkelmand
+                                    <- Back to cart
                                 </button>
                             </div>
 

@@ -41,7 +41,7 @@ include __DIR__ . '/header.php';
 <section class="account-section container py-3">
     <div class="row">
         <div class="col">
-            <h1>Hallo, <?php print $Result["fullname"]; ?></h1>
+            <h1>Hello, <?php print $Result["fullname"]; ?></h1>
         </div>
     </div>
     <div class="row" >

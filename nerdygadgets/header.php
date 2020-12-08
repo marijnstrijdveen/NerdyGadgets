@@ -92,7 +92,7 @@
                 <a href="cart.php" class="HrefDecoration"><i class="fas fa-shopping-cart" style="color:#676EFF;" aria-hidden="true"></i> Cart</a>
             </li>
             <li>
-                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;" aria-hidden="true"></i> Zoeken</a>
+                <a href="browse.php" class="HrefDecoration"><i class="fas fa-search" style="color:#676EFF;" aria-hidden="true"></i> Search</a>
             </li>
         </ul>
     </div>

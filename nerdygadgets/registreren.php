@@ -18,7 +18,7 @@ if (isset($_POST['register']))   {
     $statement = mysqli_query($Connection, $query);
 
     if ($statement) {
-        echo '<span class="alert alert-success bg-green">Account succesvol aangemaakt</span>';
+        echo '<span class="alert alert-success bg-green">Account succesfully made!</span>';
     } else {
         echo '<span class="alert alert-success">Something went wrong</span>';
     }
@@ -34,33 +34,31 @@ include __DIR__ . '/header.php';
             <div class="col-md-6">
                 <form method="post">
                     <div class="form-group">
-                        <label for="email">Volledige naam</label>
-                        <input class="form-control" type="text" name="fullname" id="fullname" placeholder="Vul hier uw voornaam in" required>
+                        <label for="email">Full name</label>
+                        <input class="form-control" type="text" name="fullname" id="fullname" placeholder="Insert full name" required>
                         <label for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email" placeholder="Vul hier uw emailadress in" required>
-                        <label for="password">Wachtwoord</label>
-                        <input class="form-control" type="password" name="password" id="password" placeholder="Vul hier uw wachtwoord in" required>
-                        <label for="email">Telefoonnummer</label>
-                        <input class="form-control" type="text" name="phone" id="phone" placeholder="Vul hier uw telefoonnummer in" required>
-                        <label for="email">address</label>
-                        <input class="form-control" type="text" name="address" id="address" placeholder="Vul hier uw address in" required>
-                        <label for="email">Woonplaats</label>
-                        <input class="form-control" type="text" name="city" id="city" placeholder="Vul hier uw wonnplaats in" required>
-                        <label for="email">postcode</label>
-                        <input class="form-control" type="text" name="postalcode" id="postalcode" placeholder="Vul hier uw postcode in" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" maxlength=7 required>
-                        <label for="email">provincie</label>
-                        <input class="form-control" type="text" name="state" id="state" placeholder="Vul hier uw provincie in" required>
-                        <label for="email">Land</label>
-                        <input class="form-control" type="text" name="country" id="country" placeholder="Vul hier uw land in" required>
+                        <input class="form-control" type="email" name="email" id="email" placeholder="Insert Email" required>
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Insert password" required>
+                        <label for="email">Phone number</label>
+                        <input class="form-control" type="text" name="phone" id="phone" placeholder="Insert phone number" required>
+                        <label for="email">Address</label>
+                        <input class="form-control" type="text" name="address" id="address" placeholder="Insert address" required>
+                        <label for="email">Residence</label>
+                        <input class="form-control" type="text" name="city" id="city" placeholder="Insert residence" required>
+                        <label for="email">Postal code</label>
+                        <input class="form-control" type="text" name="postalcode" id="postalcode" placeholder="Insert postal code" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" maxlength=7 required>
+                        <label for="email">Country</label>
+                        <input class="form-control" type="text" name="country" id="country" placeholder="Insert country" required>
                     </div>
                     <div class="form-row">
                         <div class="col">
                             <button href="inloggen.php" class="btn btn-primary" name="register" type="submit">
-                                Registreren
+                                Register
                             </button>
                         </div>
                         <div class="col text-right">
-                            <a href="inloggen.php" class="open-login">Ik heb al een account</a>
+                            <a href="inloggen.php" class="open-login">Log in</a>
                         </div>
                     </div>
                 </form>
@@ -68,13 +66,13 @@ include __DIR__ . '/header.php';
             <div class="col-md-6">
                 <div class="card bg-dark position-sticky" style="top: 100px">
                     <div class="card-body">
-                        <h5 class="card-title">Voordelen van een account aanmaken:</h5>
+                        <h5 class="card-title">The benefits of making an account: </h5>
                         <div class="card-text">
-                            Word lid van Nerdygadgets en maak gebruik van:
+                            Become a member of NerdyGadgets and make use of:
 
                             <ul>
-                                <li>Sneller afrekenen</li>
-                                <li>Aanbiedingen</li>
+                                <li>Faster paying</li>
+                                <li>Discounts</li>
                             </ul>
                         </div>
                     </div>

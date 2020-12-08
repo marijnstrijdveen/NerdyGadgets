@@ -7,7 +7,7 @@ include __DIR__ . '/header.php';
 ?>
     <section class="signin-container">
         <div class="container py-5">
-            <h1>Wachtwoord vergeten?</h1>
+            <h1>Forgot password?</h1>
             <div class="row">
                 <div class="col-md-6">
                     <form method="post">
@@ -15,14 +15,14 @@ include __DIR__ . '/header.php';
 
                             <label for="email">Email</label>
 
-                            <input class="form-control" type="email" name="email" id="email">
+                            <input class="form-control" type="email" name="Email" id="email">
                         </div>
-                        <button class="btn btn-primary" type="submit" name="Verstuurd">
-                            Wachtwoord aanvragen
+                        <button class="btn btn-primary" type="submit" name="Send">
+                            Request password
                         </button>
 
                         <a href="inloggen.php" class="py-2 d-block">
-                            Ik weet mijn wachtwoord weer, inloggen
+                            Log in
                         </a>
                     </form>
                 </div>
