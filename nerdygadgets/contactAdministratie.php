@@ -23,4 +23,3 @@ include __DIR__ . '/header.php';
     Address: <input type="text" name="address" value="">
     <input type="submit" name='submit' value="Save">
 </form>
-
