@@ -24,7 +24,7 @@ include __DIR__ . '/header.php';
 
 <div style="text-align: center;">
 <b>Welcome to Nerdygadgets' contact page!</b> <br> <br>
-<b>Over ons:</b> <br>
+<b>About us:</b> <br>
 We are NerdyGadgets. We are very proud of our products and we believe in quality. In every home, products from NerdyGadgets will fit in perfectly.<br>
 Despite the size of our company, many customers will say we appear small-scale and involved. Personal contact with our customers is very important to us.<br> <br>
 <b>Email:</b> <?php echo $email?> <br>

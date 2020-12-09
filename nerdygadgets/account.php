@@ -37,35 +37,35 @@ include __DIR__ . '/header.php';
 <section class="account-section container py-3">
     <div class="row">
         <div class="col">
-            <h1>Hallo, <?php print $Result["fullname"]; ?></h1>
+            <h1>Hello, <?php print $Result["fullname"]; ?></h1>
         </div>
     </div>
     <div class="row" >
         <div class="col">
-            <h3>Accountinformatie</h3>
+            <h3>Accountinformation</h3>
             <ul class="list-group">
                 <li class="list-group-item bg-dark">
-                    <small class="text-muted">Naam:</small>
+                    <small class="text-muted">Name:</small>
                     <h6 class="my-0"><?php print $Result["fullname"]; ?></h6>
                 </li>
                 <li class="list-group-item bg-dark">
-                    <small class="text-muted">Adres:</small>
+                    <small class="text-muted">Address:</small>
                     <h6 class="my-0"><?php print $Result["address"]; ?></h6>
                 </li>
                 <li class="list-group-item bg-dark">
-                    <small class="text-muted">Postcode:</small>
+                    <small class="text-muted">Postal code:</small>
                     <h6 class="my-0"><?php print $Result["postalcode"]; ?></h6>
                 </li>
                 <li class="list-group-item bg-dark">
-                    <small class="text-muted">Woonplaats:</small>
+                    <small class="text-muted">Residence:</small>
                     <h6 class="my-0"><?php print $Result["city"]; ?></h6>
                 </li>
                 <li class="list-group-item bg-dark">
-                    <small class="text-muted">Telefoonnummer:</small>
+                    <small class="text-muted">Phone number:</small>
                     <h6 class="my-0"><?php print $Result["phone"]; ?></h6>
                 </li>
                 <li class="list-group-item bg-dark">
-                    <small class="text-muted">E-mailadres:</small>
+                    <small class="text-muted">Email:</small>
                     <h6 class="my-0"><?php print $Result["email"]; ?></h6>
                 </li>
             </ul>
