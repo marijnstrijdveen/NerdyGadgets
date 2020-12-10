@@ -16,6 +16,12 @@
     <meta charset="UTF-8">
     <title><?=$headTitel ?? 'NerdyGadgets'?></title>
 
+    <?php
+    if (empty($_SESSION['userid'])) {
+        echo ("<script>setTimeout(function() { alert('Log in for extra benefits!'); }, 10000);</script>");
+    }
+    ?>
+
     <link rel="stylesheet" href="Public/CSS/Style.css" type="text/css">
     <link rel="stylesheet" href="Public/CSS/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="Public/CSS/nha3fuq.css">
