@@ -2,6 +2,8 @@
 include __DIR__ . '/init.php';
 /** @var $Connection mysqli */
 
+$valid = false;
+
 if (isset($_POST['register']))   {
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
@@ -10,20 +12,14 @@ if (isset($_POST['register']))   {
     $address = $_POST['address'];
     $city = $_POST['city'];
     $postalcode = $_POST['postalcode'];
-    $state = $_POST['state'];
     $country = $_POST['country'];
 
-    $query = "INSERT INTO accounts(fullname, email, password, phone, address, city, postalcode, state, country) VALUES ('$fullname','$email','$password','$phone','$address','$city','$postalcode','$state','$country')";
+    $query = "INSERT INTO accounts(fullname, email, password, phone, address, city, postalcode, country) VALUES ('$fullname','$email','$password','$phone','$address','$city','$postalcode','$country')";
 
     $statement = mysqli_query($Connection, $query);
 
-    if ($statement) {
-        echo '<span class="alert alert-success bg-green">Account succesfully made!</span>';
-    } else {
-        echo '<span class="alert alert-success">Something went wrong</span>';
-    }
-    }
-
+    $valid = true;
+}
 $headTitel = 'NerdyGadgets - Registreren';
 include __DIR__ . '/header.php';
 ?>
@@ -34,6 +30,16 @@ include __DIR__ . '/header.php';
             <div class="col-md-6">
                 <form method="post">
                     <div class="form-group">
+                        <?php if ($valid) : ?>
+                            <div class="alert alert-success">
+                                Succesfully registed!
+                            </div>
+                            <script>
+                                setTimeout(function() {
+                                    window.location.href="inloggen.php";
+                                }, 1000);
+                            </script>
+                        <?php endif; ?>
                         <label for="email">Full name</label>
                         <input class="form-control" type="text" name="fullname" id="fullname" placeholder="Insert full name" required>
                         <label for="email">Email</label>
@@ -53,7 +59,7 @@ include __DIR__ . '/header.php';
                     </div>
                     <div class="form-row">
                         <div class="col">
-                            <button href="inloggen.php" class="btn btn-primary" name="register" type="submit">
+                            <button class="btn btn-primary" name="register" type="submit">
                                 Register
                             </button>
                         </div>
