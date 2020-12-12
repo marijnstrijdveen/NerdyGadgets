@@ -137,6 +137,17 @@ public function checkout(){
       $trt = $row1['TaxRate'];
       $sql2 = "INSERT INTO `orderlines1` (`OrderID`,`StockItemID`,`Description`,`Quantity`,`UnitPrice`,`TaxRate` ) Values ('{$oid}','{$id}','{$desc}','{$rqty}','{$uprc}','{$trt}')";
       $insert2 = mysqli_query($this->call_db(),$sql2);
+      
+      $sql3 = "SELECT * FROM `stockitemholdings` WHERE `StockItemID` = '{$id}'";
+      $result3 = mysqli_query($this->call_db(),$sql3);
+      $row3 = mysqli_fetch_assoc($result3);
+
+      $updt_qty = $row3['QuantityOnHand'] - $rqty;
+
+      
+      $sql4 = "UPDATE `stockitemholdings` SET `QuantityOnHand`='$updt_qty' WHERE `StockItemID` = '$id'";
+      $insert4 = mysqli_query($this->call_db(),$sql4);
+
       $i++;
     }
     
