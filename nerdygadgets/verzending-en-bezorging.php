@@ -11,7 +11,7 @@ include __DIR__ . '/header.php';
         <br>
         <br>
     <h3>Delivery time</h3>
-    <p>If you place your order before 12:00 AM on a weekday, your package will usually be delivered to you the next working day. <br>
+    <p>If you place your order before 18:00 PM on a weekday, your package will usually be delivered to you the next working day. <br>
         Did you place an order on a Saturday or a Sunday? In this case it might take us two days to deliver your package. <br>
         The shipment of your package is provided by PostNL, we depend on their delivery.
     </p>

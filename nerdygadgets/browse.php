@@ -208,7 +208,7 @@ include __DIR__ . '/header.php';
                 } ?>>Name descending
                 </option>
             </select>
-            <h1>bestel voor 6u, morgen in huis! </h1>
+            <h1>Order before 6PM and get your delivery tomorrow! </h1>
     </form>
 </div>
 </div>
