@@ -33,11 +33,14 @@ $Query = "
            SELECT SI.StockItemID, 
             (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice, 
             StockItemName,
+            IsChillerStock,
+            Temperature,
             CONCAT('Stock: ',QuantityOnHand)AS QuantityOnHand,
             SearchDetails, 
             (CASE WHEN (RecommendedRetailPrice*(1+(TaxRate/100))) > 50 THEN 0 ELSE 6.95 END) AS SendCosts, MarketingComments, CustomFields, SI.Video,
             (SELECT ImagePath FROM stockgroups JOIN stockitemstockgroups USING(StockGroupID) WHERE StockItemID = SI.StockItemID LIMIT 1) as BackupImagePath   
             FROM stockitems SI 
+            JOIN coldroomtemperatures 
             JOIN stockitemholdings SIH USING(stockitemid)
             JOIN stockitemstockgroups ON SI.StockItemID = stockitemstockgroups.StockItemID
             JOIN stockgroups USING(StockGroupID)
@@ -65,6 +68,8 @@ mysqli_stmt_bind_param($Statement, "i", $_GET['id']);
 mysqli_stmt_execute($Statement);
 $R = mysqli_stmt_get_result($Statement);
 $R = mysqli_fetch_all($R, MYSQLI_ASSOC);
+
+
 
 if ($R) {
     $Images = $R;
@@ -158,6 +163,16 @@ include __DIR__ . '/header.php';
             <div>
             <a href="view.php?id=<?php echo $Result["StockItemID"]; ?>&add=<?php echo $Result["StockItemID"]; ?>" class="btn btn-danger">Add to Cart</a>
         </div>
+            <div>
+                <?php if ($Result["IsChillerStock"]) :?>
+                    <div>
+                        <h8> Temperature:
+                        <?php echo $Result['Temperature']; ?>
+                            °C
+                        </h8>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
         <div id="StockItemDescription">
             <h3>Article description</h3>
